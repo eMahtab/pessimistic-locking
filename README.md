@@ -3,6 +3,9 @@ Pessimistic locking is used when we want **only one thread (out of multiple thre
 The thread which gets the lock over table row, gets the chance to update the record, other threads which want to update the same record waits for the, lock over table row to be released.
 The thread's release the lock by commiting the transaction or by rollback.
 
+Below is a simple example which explains the pessimistic locking, where multiple threads (5 in this case) try to update the quantity in product_inventory table for product_id 1.
+Only one thread at a time update the quantity for product_id 1. Threads wait until, the thread which have the lock releases the lock over table row with product_id 1.
+
 ## Step 1 : Create product_inventory table under test database in MySQL
 ```sql
 CREATE TABLE `test`.`product_inventory` (
@@ -114,7 +117,7 @@ public class InsufficientProductInventoryException extends Exception{
 ```
 
 ### Code Execution Outputs :
-Note that at the start of every run the quanity of product_id 1 is reset to 5 with an update statement 
+**Note that at the start of every run the quanity of product_id 1 is reset to 5 with an update statement **
 ```sql
 UPDATE product_inventory set quantity= 5 where product_id = 1
 ```
