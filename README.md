@@ -1,7 +1,7 @@
 # Pessimistic Locking
 
 
-# Step 1 : Create product_inventory table under test database in MySQL
+## Step 1 : Create product_inventory table under test database in MySQL
 ```sql
 CREATE TABLE `test`.`product_inventory` (
   `product_id` INT NOT NULL,
@@ -9,13 +9,13 @@ CREATE TABLE `test`.`product_inventory` (
   `quantity` INT NULL,
   PRIMARY KEY (`product_id`));
 ```
-# Step 2 : Insert a product record in the product_inventory table
+## Step 2 : Insert a product record in the product_inventory table
 ```sql
 INSERT INTO product_inventory(product_id,product_name,quantity)
 VALUES (1,'Some Popular Product',5);
 ```
 
-# Write the code, making sure no two threads update the same product at the same time
+### Step 3 : Write the code, making sure no two threads update the same product at the same time
 ```java
 package net.mahtabalam;
 
