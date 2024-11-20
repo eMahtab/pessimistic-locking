@@ -133,3 +133,20 @@ Thread-0 updated product 1 to quantity: 4
 Thread-4 updated product 1 to quantity: 3
 Thread-2 updated product 1 to quantity: 1
 ```
+
+#### Output 3:
+```
+Thread-4 entered updateProductInventory() execution :-1
+Thread-3 entered updateProductInventory() execution :2
+Thread-1 entered updateProductInventory() execution :-2
+Thread-2 entered updateProductInventory() execution :-2
+Thread-0 entered updateProductInventory() execution :-1
+Thread-0 updated product 1 to quantity: 4
+Thread-2 updated product 1 to quantity: 2
+Thread-4 updated product 1 to quantity: 1
+net.mahtabalam.InsufficientProductInventoryException: Thread-1 Insufficient inventory for product ID 1. Current quantity: 1, attempted change: -2
+	at net.mahtabalam.Test.updateProductInventory(Test.java:44)
+	at net.mahtabalam.Test.lambda$1(Test.java:18)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Thread-3 updated product 1 to quantity: 3
+```
