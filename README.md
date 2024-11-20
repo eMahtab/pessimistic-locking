@@ -24,6 +24,8 @@ Note the Prepared statement `selectForUpdate`, by adding `FOR UPDATE` at the end
 String selectForUpdate = "SELECT quantity FROM "+ PRODUCT_INVENTORY_TABLE +" WHERE product_id = ? FOR UPDATE";
 ```
 
+**The program throws InsufficientProductInventoryException if we try to set the product quanity to a negative value (less than zero).**
+
 ```java
 package net.mahtabalam;
 
@@ -100,6 +102,13 @@ public class Test {
     }
 }
 
+public class InsufficientProductInventoryException extends Exception{
+	private static final long serialVersionUID = 1L;
+
+	public InsufficientProductInventoryException(String message) {
+		super(message);
+    }
+}
 ```
 
 ### Code Execution Outputs :
