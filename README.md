@@ -17,7 +17,11 @@ VALUES (1,'Some Popular Product',5);
 ```
 
 ### Step 3 : Write the code, making sure no two threads update the same product at the same time
-In the below 
+In the below Java program we simulate 5 different threads trying to update the quanity for the product whose product_id is 1.
+```
+String selectForUpdate = "SELECT quantity FROM "+ PRODUCT_INVENTORY_TABLE +" WHERE product_id = ? FOR UPDATE";
+```
+
 ```java
 package net.mahtabalam;
 
