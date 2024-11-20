@@ -5,7 +5,8 @@ The thread's release the lock by commiting the transaction or by rollback.
 
 Below is a simple example which explains the pessimistic locking, where multiple threads (5 in this case) try to update the quantity in product_inventory table for product_id 1.
 Only one thread at a time update the quantity for product_id 1. Threads wait until, the thread which have the lock releases the lock over table row with product_id 1.
-Also the program doesn't allow the updateProductInventory() operation where the update would result in setting a value which is less than zero for quantity.
+
+Also the program doesn't allow the updateProductInventory() operation where the update would result in setting a value which is less than zero for quantity. It throws an **InsufficientProductInventoryException**.
 
 ## Step 1 : Create product_inventory table under test database in MySQL
 ```sql
