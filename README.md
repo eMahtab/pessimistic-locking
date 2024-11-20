@@ -1,5 +1,5 @@
 # Pessimistic Locking
-
+Pessimistice locking is used when we want only one thread (out of multiple threads) at a time to update the database record (a row in a database table). 
 
 ## Step 1 : Create product_inventory table under test database in MySQL
 ```sql
