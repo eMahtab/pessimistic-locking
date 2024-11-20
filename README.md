@@ -10,12 +10,14 @@ CREATE TABLE `test`.`product_inventory` (
   PRIMARY KEY (`product_id`));
 ```
 ## Step 2 : Insert a product record in the product_inventory table
+We insert a product with product_id as 1 and quantity set to 5
 ```sql
 INSERT INTO product_inventory(product_id,product_name,quantity)
 VALUES (1,'Some Popular Product',5);
 ```
 
 ### Step 3 : Write the code, making sure no two threads update the same product at the same time
+In the below 
 ```java
 package net.mahtabalam;
 
@@ -28,7 +30,7 @@ public class Test {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/test?useSSL=false";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "RootPass1!";
+    private static final String DB_PASSWORD = "YOUR_DB_USER_PASSWORD";
     private static final String PRODUCT_INVENTORY_TABLE = "product_inventory";
 
     public static void main(String[] args) {
