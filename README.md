@@ -18,7 +18,8 @@ VALUES (1,'Some Popular Product',5);
 
 ### Step 3 : Write the code, making sure no two threads update the same product at the same time
 In the below Java program we simulate 5 different threads trying to update the quanity for the product whose product_id is 1.
-```
+Note the Pepared statement selectForUpdate, by adding FOR UPDATE at the end of SELECT statement, we are trying to get the lock on the specific row (in this case product with product_id 1).
+```java
 String selectForUpdate = "SELECT quantity FROM "+ PRODUCT_INVENTORY_TABLE +" WHERE product_id = ? FOR UPDATE";
 ```
 
