@@ -173,3 +173,6 @@ By the above output results, its clear that regardless of the order of threads b
 You would never want that multiple users bought the same product when the inventory had just 1 quantity of that product, or multiple users being able to book the exact same seat when it really is just one physical seat. Pessimistic locking is a reliable mechanism to enforce data integrity in high-contention scenarios.
 
 **Pessimistic locking is a better choice when possibility of a conflict is high.**
+
+## References :
+Optimistic Locking : https://github.com/eMahtab/optimistic-locking
