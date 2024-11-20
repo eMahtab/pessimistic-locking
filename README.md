@@ -101,3 +101,35 @@ public class Test {
 }
 
 ```
+
+### Code Execution Outputs :
+Note that at the start of every run the quanity of product_id 1 is reset to 5 with an update statement 
+```sql
+UPDATE product_inventory set quantity= 5 where product_id = 1
+```
+#### Output 1:
+```
+Thread-4 entered updateProductInventory() execution :-1
+Thread-0 entered updateProductInventory() execution :-1
+Thread-1 entered updateProductInventory() execution :-2
+Thread-3 entered updateProductInventory() execution :2
+Thread-2 entered updateProductInventory() execution :-2
+Thread-1 updated product 1 to quantity: 3
+Thread-2 updated product 1 to quantity: 1
+Thread-3 updated product 1 to quantity: 3
+Thread-0 updated product 1 to quantity: 2
+Thread-4 updated product 1 to quantity: 1
+```
+#### Output 2:
+```
+Thread-4 entered updateProductInventory() execution :-1
+Thread-1 entered updateProductInventory() execution :-2
+Thread-2 entered updateProductInventory() execution :-2
+Thread-0 entered updateProductInventory() execution :-1
+Thread-3 entered updateProductInventory() execution :2
+Thread-1 updated product 1 to quantity: 3
+Thread-3 updated product 1 to quantity: 5
+Thread-0 updated product 1 to quantity: 4
+Thread-4 updated product 1 to quantity: 3
+Thread-2 updated product 1 to quantity: 1
+```
