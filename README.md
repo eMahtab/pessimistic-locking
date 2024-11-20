@@ -40,7 +40,6 @@ public class Test {
         Thread t5 = new Thread(() -> updateProductInventory(1, -1));
 
         t1.start(); t2.start(); t3.start(); t4.start(); t5.start();
-        
     }
 
     private static void updateProductInventory(int productId, int quantityChange) {
