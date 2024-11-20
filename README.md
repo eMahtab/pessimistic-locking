@@ -166,3 +166,6 @@ net.mahtabalam.InsufficientProductInventoryException: Thread-1 Insufficient inve
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 Thread-3 updated product 1 to quantity: 3
 ```
+By the above output result, its clear that regardless of the order of threads being successful in getting the lock over table row, **no two threads are able to update the product quantity for the same product at the same time**. This ensures consistency of the product quantity, which is very important in any real world application, and guarantees that each thread will see the correct value of quantity before updating value of quantity. 
+
+You would never want that multiple users bought the same product when the inventory had just 1 quanity of that product, or multiple users being able to book the exact same seat when it realy is just one seat.
