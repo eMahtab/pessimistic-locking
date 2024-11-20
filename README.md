@@ -33,6 +33,8 @@ String selectForUpdate = "SELECT quantity FROM "+ PRODUCT_INVENTORY_TABLE +" WHE
 
 **The program throws InsufficientProductInventoryException if we try to set the product quanity to a negative value (less than zero).**
 
+!["Eclipse Project"](eclipse-project.png?raw=true)
+
 ```java
 package net.mahtabalam;
 
