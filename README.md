@@ -121,7 +121,7 @@ public class InsufficientProductInventoryException extends Exception{
 ```
 
 ### Code Execution Outputs :
-**Note that at the start of every run the quanity of product_id 1 is reset to 5 with an update statement**
+**Note that at the start of every run, I manually set the quanity of product_id 1 to 5 with an update statement**
 ```sql
 UPDATE product_inventory set quantity= 5 where product_id = 1
 ```
