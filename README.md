@@ -9,3 +9,8 @@ CREATE TABLE `test`.`product_inventory` (
   `quantity` INT NULL,
   PRIMARY KEY (`product_id`));
 ```
+# Step 2 : Insert a product record in the product_inventory table
+```sql
+INSERT INTO product_inventory(product_id,product_name,quantity)
+VALUES (1,'Some Popular Product',5);
+```
