@@ -1,6 +1,6 @@
 # Pessimistic Locking
-Pessimistice locking is used when we want only one thread (out of multiple threads) at a time to update the database record (a row in a database table).
-The thread which gets the lock over table row, gets the chance to update the record, other threads which want to update the same record waits for the table row to be released.
+Pessimistic locking is used when we want only one thread (out of multiple threads) at a time to update the database record (a row in a database table).
+The thread which gets the lock over table row, gets the chance to update the record, other threads which want to update the same record waits for the, lock over table row to be released.
 The thread's release the lock by commiting the transaction or by rollback.
 
 ## Step 1 : Create product_inventory table under test database in MySQL
